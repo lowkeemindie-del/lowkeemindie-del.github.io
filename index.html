@@ -13,16 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="overrides.css">
+  <link rel="stylesheet" href="responsive-fixes.css">
   <style>
-    /* Project actions stay with the visual, never detached below the card. */
-    .card-image{isolation:isolate}
-    .card-image::after{content:"";position:absolute;inset:0;background:rgba(4,22,29,.5);opacity:0;transition:opacity .24s ease;z-index:2;pointer-events:none}
-    .card-overlay-action{position:absolute;z-index:3;top:50%;left:50%;display:inline-flex;align-items:center;gap:.65rem;padding:.78rem 1.05rem;border:1px solid rgba(255,255,255,.92);background:rgba(9,29,38,.82);color:#fff;font:600 .82rem/1 "Be Vietnam Pro",sans-serif;text-decoration:none;white-space:nowrap;transform:translate(-50%,-42%);opacity:0;pointer-events:none;transition:opacity .24s ease,transform .24s ease,background .24s ease;cursor:pointer}
-    .card-overlay-action:hover{background:#0d9aa7}
-    .project-card:hover .card-image::after,.project-card:focus-within .card-image::after{opacity:1}
-    .project-card:hover .card-overlay-action,.project-card:focus-within .card-overlay-action{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
-    .project-card .card-bottom .card-action{display:none}
-    @media (hover:none){.card-overlay-action{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}.card-image::after{opacity:.34}}
     /* Typography is a full-width visual layer; the portrait intentionally overlaps it. */
     .hero-cutout .hero-name,.hero-cutout .hero-outline{left:50%;width:100%;text-align:center;transform:translateX(-50%)}
     @media (max-width:620px){.hero-cutout .hero-name,.hero-cutout .hero-outline{left:0;width:95vw;text-align:left;transform:none}}
@@ -94,7 +86,6 @@
               <circle class="network-node network-node--c" cx="822" cy="342" r="23"/>
               <circle class="network-node network-node--d" cx="1063" cy="268" r="17"/>
             </svg>
-            <button class="card-overlay-action" data-dialog="progress-dialog">Tóm tắt dự án <b>↗</b></button>
           </div>
           <div class="card-top"><span>AI & VẬN HÀNH / 5NAL / 2026</span><span>01</span></div>
           <h3>Hệ thống quản lý tiến độ<br>và Bot 5nal</h3>
@@ -103,7 +94,7 @@
         </article>
 
         <article class="project-card project-ai" data-group="ai">
-          <div class="card-image dreamy-image"><img src="./1.png" alt="Khung hình hoàn thiện từ Dreamy Days AI Production System"><button class="card-overlay-action" data-dialog="dreamy-dialog">Xem gallery <b>↗</b></button></div>
+          <div class="card-image dreamy-image"><img src="./1.png" alt="Khung hình hoàn thiện từ Dreamy Days AI Production System"></div>
           <div class="card-top"><span>AI VIDEO SYSTEM / CÁ NHÂN / 2025–26</span><span>02</span></div>
           <h3>Dreamy Days<br>AI Production System</h3>
           <p>Hệ thống multi-agent và batch generation phục vụ kênh YouTube AI do tôi tự xây dựng, vận hành.</p>
@@ -111,7 +102,7 @@
         </article>
 
         <article class="project-card project-ai" data-group="ai">
-          <div class="card-image flower-image"><img src="./flower-v90-finished.jpg" alt="Khung hình hoàn thiện từ video AI bình hoa được sản xuất hàng loạt"><button class="card-overlay-action" data-dialog="flower-dialog">Tóm tắt dự án <b>↗</b></button></div>
+          <div class="card-image flower-image"><img src="./flower-v90-finished.jpg" alt="Khung hình hoàn thiện từ video AI bình hoa được sản xuất hàng loạt"></div>
           <div class="card-top"><span>AI BATCH PRODUCTION / 2026</span><span>03</span></div>
           <h3>Tool sản xuất<br>video AI hàng loạt</h3>
           <p>Workflow từ Sheet yêu cầu đến prompt, tạo và ghép video hoàn chỉnh cho 150 video sản phẩm trong 5–7 ngày.</p>
@@ -119,42 +110,42 @@
         </article>
 
         <article class="project-card project-video wide" data-group="video">
-          <div class="card-image tuan-image"><span>TUẤN<br>NGHĨA</span><a class="card-overlay-action" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=LgL5DqCkuTU">Xem phim <b>↗</b></a></div>
+          <div class="card-image tuan-image"><span>TUẤN<br>NGHĨA</span></div>
           <div class="card-top"><span>PHIM DOANH NGHIỆP / 2024</span><span>04</span></div>
           <h3>Tuấn Nghĩa Group</h3><p>Một trong ba quay phim; phụ trách flycam và dựng. Phim được sử dụng tại lễ ký kết, giới thiệu doanh nghiệp với đối tác quốc tế.</p>
           <div class="card-bottom"><span>Camera · Flycam · Editor</span><a class="card-action" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=LgL5DqCkuTU">Xem phim <b>↗</b></a></div>
         </article>
 
         <article class="project-card project-video" data-group="video">
-          <div class="card-image mk-image"><span>MK+</span><a class="card-overlay-action" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=N2V3vQ7l2Ac">Xem TVC <b>↗</b></a></div>
+          <div class="card-image mk-image"><span>MK+</span></div>
           <div class="card-top"><span>TVC / 2024</span><span>05</span></div>
           <h3>MK+</h3><p>Quay phụ, dựng chính và color grading cho TVC ra mắt thị trường Việt Nam của thương hiệu mỹ phẩm Hàn Quốc.</p>
           <div class="card-bottom"><span>Editor · Colorist</span><a class="card-action" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=N2V3vQ7l2Ac">Xem TVC <b>↗</b></a></div>
         </article>
 
         <article class="project-card project-video" data-group="video">
-          <div class="card-image vin-image"><span>VINAVIC</span><a class="card-overlay-action" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=f3kV1oYjfU0">Xem phim <b>↗</b></a></div>
+          <div class="card-image vin-image"><span>VINAVIC</span></div>
           <div class="card-top"><span>PHIM DOANH NGHIỆP / 2025</span><span>06</span></div>
           <h3>Vinavic</h3><p>Dựng chính và color grading cho phim doanh nghiệp đầu tiên phục vụ truyền thông đa nền tảng và giới thiệu đối tác.</p>
           <div class="card-bottom"><span>Editor · Colorist</span><a class="card-action" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=f3kV1oYjfU0">Xem phim <b>↗</b></a></div>
         </article>
 
         <article class="project-card project-video" data-group="video">
-          <div class="card-image jpsc-image"><span>JPSC</span><a class="card-overlay-action" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=xLLY5KUFZx4">Xem phim <b>↗</b></a></div>
+          <div class="card-image jpsc-image"><span>JPSC</span></div>
           <div class="card-top"><span>PHIM DOANH NGHIỆP / 2023</span><span>07</span></div>
           <h3>JPSC</h3><p>Quay và dựng chính phim doanh nghiệp đầu tiên, giúp khách hàng giới thiệu năng lực với các trường, đối tác Hàn Quốc.</p>
           <div class="card-bottom"><span>Camera · Editor</span><a class="card-action" target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=xLLY5KUFZx4">Xem phim <b>↗</b></a></div>
         </article>
 
         <article class="project-card project-visual wide" data-group="visual">
-          <div class="card-image meraki-image"><img src="./IMG_8138.JPG" alt="Hộp quà Tết Meraki đã sản xuất"><span>MERAKI</span><button class="card-overlay-action" data-dialog="meraki-dialog">Thông tin dự án <b>↗</b></button></div>
+          <div class="card-image meraki-image"><img src="./IMG_8138.JPG" alt="Hộp quà Tết Meraki đã sản xuất"><span>MERAKI</span></div>
           <div class="card-top"><span>PACKAGING / 2023</span><span>08</span></div>
           <h3>Hộp quà Tết Meraki</h3><p>Thiết kế ba mẫu hộp quà và 20 nhãn sản phẩm; phối hợp trực tiếp với nhà in. Hơn 500 hộp được bán trong mùa Tết 2023.</p>
           <div class="card-bottom"><span>Packaging · Print production</span><button class="card-action" data-dialog="meraki-dialog">Thông tin dự án <b>↗</b></button></div>
         </article>
 
         <article class="project-card project-visual" data-group="visual">
-          <div class="card-image mua-image"><img src="./mua-packaging.png" alt="Mockup bao bì trà hoa quả sấy khô MÙA"><a class="card-overlay-action" target="_blank" rel="noreferrer" href="https://www.behance.net/gallery/129820671/MUA-Tra-hoa-qu-sy-kho-Da-Lt">Xem dự án <b>↗</b></a></div>
+          <div class="card-image mua-image"><img src="./mua-packaging.png" alt="Mockup bao bì trà hoa quả sấy khô MÙA"></div>
           <div class="card-top"><span>BRAND IDENTITY / 2021</span><span>09</span></div>
           <h3>MÙA — Trà hoa quả sấy khô</h3><p>Dự án cuối kỳ FPT Arena, đạt điểm cao nhất lớp trong giai đoạn học trực tuyến vì Covid-19.</p>
           <div class="card-bottom"><span>Brand identity · Packaging</span><a class="card-action" target="_blank" rel="noreferrer" href="https://www.behance.net/gallery/129820671/MUA-Tra-hoa-qu-sy-kho-Da-Lt">Xem dự án <b>↗</b></a></div>
