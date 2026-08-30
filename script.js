@@ -26,13 +26,24 @@ filters.forEach((button) => button.addEventListener('click', () => {
   });
 }));
 
-// Mỗi hành động thuộc về chính thumbnail của dự án: chỉ hiện khi hover/focus.
+// Thumbnail là một vùng bấm toàn phần; liên kết văn bản bên dưới luôn hiện trên cả touch lẫn desktop.
 projects.forEach((project) => {
   const image = project.querySelector('.card-image');
   const action = project.querySelector('.card-action');
   if (image && action) {
-    action.classList.add('thumbnail-action');
-    image.append(action);
+    const actionLabel = action.textContent.trim().replace(/\s+/g, ' ');
+    image.classList.add('is-interactive');
+    image.setAttribute('role', 'link');
+    image.setAttribute('tabindex', '0');
+    image.setAttribute('aria-label', actionLabel);
+    const activate = () => action.click();
+    image.addEventListener('click', activate);
+    image.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        activate();
+      }
+    });
   }
 });
 
