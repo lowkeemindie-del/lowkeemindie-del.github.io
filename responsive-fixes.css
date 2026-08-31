@@ -33,6 +33,40 @@ body { overflow-x: hidden; }
   background: transparent;
 }
 
+/* Giữ ảnh gốc là nhân vật chính: không phủ tint, không làm sai màu footage khi hover. */
+.compact-grid .card-image::after { background: transparent; }
+.compact-grid .project-card:hover .card-image img,
+.compact-grid .project-card:focus-within .card-image img {
+  transform: scale(1.025);
+  filter: none;
+}
+
+.more-projects {
+  display: flex;
+  justify-content: center;
+  margin: 2.4rem 0 0;
+}
+
+.more-projects button {
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  padding: .82rem 1.25rem;
+  font: 600 .75rem var(--mono);
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.more-projects button:hover,
+.more-projects button:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.more-projects button span { margin-left: .45rem; color: var(--teal); }
+
 .compact-grid .card-bottom {
   display: flex;
   justify-content: flex-start;
@@ -86,4 +120,6 @@ body { overflow-x: hidden; }
     padding: .35rem 0;
     font-size: .78rem;
   }
+
+  .more-projects { margin-top: 1.9rem; }
 }
