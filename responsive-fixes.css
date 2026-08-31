@@ -33,7 +33,7 @@ body { overflow-x: hidden; }
   background: transparent;
 }
 
-/* Giữ ảnh gốc là nhân vật chính: không phủ tint, không làm sai màu footage khi hover. */
+/* Giữ ảnh gốc là nhân vật chính: khõng phủ tint, không làm sai máu footage khi hover. */
 .compact-grid .card-image::after { background: transparent; }
 .compact-grid .project-card:hover .card-image img,
 .compact-grid .project-card:focus-within .card-image img {
@@ -45,6 +45,10 @@ body { overflow-x: hidden; }
   display: flex;
   justify-content: center;
   margin: 2.4rem 0 0;
+}
+
+.more-projects[hidden] {
+  display: none !important;
 }
 
 .more-projects button {
