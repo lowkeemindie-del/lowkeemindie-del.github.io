@@ -27,13 +27,18 @@ body { overflow-x: hidden; }
   background: url("https://img.youtube.com/vi/f3kV1oYjfU0/maxresdefault.jpg") center/cover;
 }
 
+/* Ảnh dọc có typography/khuôn mặt ở nửa trên: ưu tiên crop từ đỉnh, không cắt ở tâm. */
+.compact-grid .card-image img.thumbnail-crop-top {
+  object-position: center top;
+}
+
 .compact-grid .tuan-image::after,
 .compact-grid .mk-image::after,
 .compact-grid .vin-image::after {
   background: transparent;
 }
 
-/* Giữ ảnh gốc là nhân vật chính: khõng phủ tint, không làm sai máu footage khi hover. */
+/* Giữ ảnh gốc là nhân vật chính: không phủ tint, không làm sai màu footage khi hover. */
 .compact-grid .card-image::after { background: transparent; }
 .compact-grid .project-card:hover .card-image img,
 .compact-grid .project-card:focus-within .card-image img {
